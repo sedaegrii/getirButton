@@ -93,7 +93,7 @@ class _ProductCardState extends State<ProductCard> {
   void _handleScroll() {
     if (quantity > 0) {
       setState(() {
-        endTween = 120;
+        endTween = 100;
       });
     } else if (quantity == 0) {
       setState(() {
@@ -145,7 +145,7 @@ class _ProductCardState extends State<ProductCard> {
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.deepPurple,
+                      color: Colors.purple,
                       offset: Offset(0, 4),
                       spreadRadius: 0,
                       blurRadius: 12,
@@ -162,13 +162,12 @@ class _ProductCardState extends State<ProductCard> {
                 duration: const Duration(milliseconds: 200),
                 builder: (context, double size, child) {
                   double heightPercent = (50).abs() / 100;
-                  bool isFull = endTween == 120;
+                  bool isFull = endTween == 100;
                   double radius = 10.0;
                   return Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(radius)),
-                      color:
-                          quantity == 0 ? Colors.white : Colors.deepPurple[400],
+                      color: Colors.purple,
                     ),
                     height: (quantity > 0 ? 32 : 20) + heightPercent * size,
                     width: 32,
